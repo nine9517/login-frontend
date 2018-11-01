@@ -110,7 +110,7 @@ class Login extends Component {
                             appId="714280018931580"
                             autoLoad={false}
                             size="medium"
-                            scope="public_profile"
+                            scope="public_profile,email"
                             fields="name,email,picture"
                             callback={this.responefacebook.bind(this)}
                         />
