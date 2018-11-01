@@ -1,0 +1,38 @@
+.bt-login{
+    background-color: #5b5b5b;
+    color: #fff;
+}
+.bt-login:hover,.bt-fb:hover,.bt-login:active,.bt-login:focus,.bt-fb:active,.bt-fb:focus,.bt-register:active,.bt-register:focus,.bt-register:hover{
+    color: #fff;
+}
+.icon-fb{
+    margin-right: 10px;
+}
+.bt-fb{
+    background-color: #4267b2;
+    color: #fff;
+}
+.input::placeholder {
+    color: #989898;
+}
+.input {
+    border-color: #989898;
+}
+hr{
+    background-color: #cccccc;
+    border: none;
+    display: block;
+    height: 1px;
+    margin: 1.5rem 0;
+}
+.bt-register{
+    background-color: #a52c2c;
+    color: #fff;
+}
+.icon-input{
+    color: #989898;
+    margin: 8px;
+}
+.kep-login-facebook{
+    width: 100%;
+}

@@ -1,0 +1,13 @@
+.bt-confirm{
+    background-color: #a52c2c;
+    color: #fff;
+}
+.input::placeholder {
+    color: #989898;
+}
+.input {
+    border-color: #989898;
+}
+.bt-register:active,.bt-register:focus,.bt-register:hover{
+    color: #fff;
+}
