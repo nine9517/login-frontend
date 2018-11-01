@@ -2,7 +2,10 @@
     background-color: #5b5b5b;
     color: #fff;
 }
-.bt-login:hover,.bt-fb:hover,.bt-login:active,.bt-login:focus,.bt-fb:active,.bt-fb:focus,.bt-register:active,.bt-register:focus,.bt-register:hover{
+.bt-login:hover,.bt-fb:hover,
+.bt-login:active,.bt-login:focus,
+.bt-fb:active,.bt-fb:focus,.bt-register:active,
+.bt-register:focus,.bt-register:hover{
     color: #fff;
 }
 .icon-fb{
@@ -18,20 +21,9 @@
 .input {
     border-color: #989898;
 }
-hr{
-    background-color: #cccccc;
-    border: none;
-    display: block;
-    height: 1px;
-    margin: 1.5rem 0;
-}
 .bt-register{
     background-color: #a52c2c;
     color: #fff;
-}
-.icon-input{
-    color: #989898;
-    margin: 8px;
 }
 .kep-login-facebook{
     width: 100%;

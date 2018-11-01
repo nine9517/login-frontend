@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import Background from '../layout/Background';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope,faLock } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import 'bulma/css/bulma.css';
 import './Register.css';
@@ -67,26 +65,17 @@ class Register extends Component {
             <Background>
                 <h1 className="title has-text-centered">Register</h1>
                 <div className="field">
-                    <div className="control has-icons-left">
-                        <span class="icon is-small is-left icon-input">
-                            <FontAwesomeIcon size="2x" icon={faEnvelope} className="icon-input" />
-                        </span>
+                    <div className="control">
                         <input className="input is-large" type="email" onChange={evt => this.updateInputEmail(evt)} placeholder="Email" value={this.state.email}/>
                     </div>
                 </div>
                 <div className="field">
-                    <div className="control has-icons-left">
-                        <span class="icon is-small is-left icon-input">
-                            <FontAwesomeIcon size="2x" icon={faLock} className="icon-input" />
-                        </span>
+                    <div className="control">
                         <input className="input is-large" type="password" onChange={evt => this.updateInputPass(evt)} placeholder="Password" value={this.state.pass}/>
                     </div>
                 </div>
                 <div className="field">
-                    <div className="control has-icons-left">
-                        <span class="icon is-small is-left icon-input">
-                            <FontAwesomeIcon size="2x" icon={faLock} className="icon-input" />
-                        </span>
+                    <div className="control">
                         <input className="input is-large" type="password" onChange={evt => this.updateInputConPass(evt)} placeholder="Confirm Password" value={this.state.conpass}/>
                     </div>
                 </div>

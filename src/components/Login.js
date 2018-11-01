@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Background from '../layout/Background';
 import FacebookLogin from 'react-facebook-login';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import 'bulma/css/bulma.css';
 import './Login.css';
@@ -27,7 +25,7 @@ class Login extends Component {
 
     login() {
         if(this.state.email=="" || this.state.pass=="" || this.state.conpass==""){
-            this.popup("Error : Please fill in all information.", "error");
+            alert("Error : Please fill in all information.");
         }else{
         axios.post('https://login-api-59161100.herokuapp.com/api/users/login', {
             email: this.state.email,
@@ -92,18 +90,12 @@ class Login extends Component {
             <Background>
                 <h1 className="title has-text-centered">Welcome</h1>
                 <div className="field">
-                    <div className="control has-icons-left">
-                        <span class="icon is-small is-left icon-input">
-                            <FontAwesomeIcon size="2x" icon={faEnvelope} className="icon-input" />
-                        </span>
+                    <div className="control">
                         <input className="input is-large" type="email" onChange={evt => this.updateInputEmail(evt)} placeholder="Email" value={this.state.email} />
                     </div>
                 </div>
                 <div className="field">
-                    <div className="control has-icons-left">
-                        <span class="icon is-small is-left icon-input">
-                            <FontAwesomeIcon size="2x" icon={faLock} className="icon-input" />
-                        </span>
+                    <div className="control">
                         <input className="input is-large" type="password" placeholder="Password" onChange={evt => this.updateInputPass(evt)} value={this.state.pass} />
                     </div>
                 </div>
@@ -124,7 +116,6 @@ class Login extends Component {
                         />
                     </div>
                 </div>
-                <hr></hr>
                 <div className="field">
                     <div className="control">
                         <button className="button is-fullwidth bt-register is-large" onClick={() => this.goToRegister()}>
