@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Background from '../layout/Background';
-import SweetAlert from 'react-bootstrap-sweetalert';
 import axios from 'axios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
@@ -15,7 +14,6 @@ class Home extends Component {
             this.props.history.push('/')
         }
         this.state = {
-            alertload: true,
             img:"http://bcnnow.decodeproject.eu/img/users/no-image.jpg",
             email:"example@domain.com",
             history:[],
@@ -26,7 +24,6 @@ class Home extends Component {
             .then(function (response) {
                 console.log(response);
                 this.setState({
-                    alertload: false,
                     img:response.data.data.picture,
                     email:response.data.data.email,
                     history:response.data.data.history_login
@@ -38,25 +35,8 @@ class Home extends Component {
             }.bind(this));
         
     }
-    popup() {
-        const getAlert = () => (
-            <SweetAlert
-                type="success"
-                title="Logout"
-                onConfirm={() => this.hideAlert()}
-            >
-                Successfully
-            </SweetAlert>
-        );
-
-        this.setState({
-            alert: getAlert()
-        });
-    }
-    hideAlert() {
-        this.setState({
-            alert: null
-        });
+    
+    logout() {
         sessionStorage.removeItem("id");
         this.props.history.push('/')
     }
@@ -66,7 +46,7 @@ class Home extends Component {
         return (
             <Background>
                 <div className="has-text-right">
-                    <FontAwesomeIcon size="2x" icon={faSignOutAlt} onClick={() => this.popup()} className="icon-input" />
+                    <FontAwesomeIcon size="2x" icon={faSignOutAlt} onClick={() => this.logout()} className="icon-input" />
                 </div>
                 <div className="logoUser has-text-centered">
                     <figure className="image is-128x128">
@@ -98,15 +78,6 @@ class Home extends Component {
                         </tbody>
                     </table>
                 </div>
-                <SweetAlert
-                    custom
-                    showConfirm={false}
-                    show={this.state.alertload}
-                    customIcon="https://mbtskoudsalg.com/images/loading-gif-png-5.gif"
-                >
-                    Loading...
-                </SweetAlert>
-                {this.state.alert}
             </Background>
                 );
             }

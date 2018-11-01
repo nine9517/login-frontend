@@ -3,7 +3,6 @@ import Background from '../layout/Background';
 import FacebookLogin from 'react-facebook-login';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
-import SweetAlert from 'react-bootstrap-sweetalert';
 import axios from 'axios';
 import 'bulma/css/bulma.css';
 import './Login.css';
@@ -17,7 +16,6 @@ class Login extends Component {
             this.props.history.push('/home')
         }
         this.state = {
-            alert: null,
             email: "",
             pass: ""
         };
@@ -39,43 +37,22 @@ class Login extends Component {
                 console.log(response);
                 if (response.data.status == 0) {
                     sessionStorage.setItem("id", response.data.id);
-                    this.popup(response.data.message, "success");
-                } else {
-                    this.popup(response.data.message, "error");
+                    alert(response.data.message);
+                    this.props.history.push('/home')
+                }else{
+                    alert(response.data.message);
                 }
+                
 
             }.bind(this))
             .catch(function (error) {
                 console.log(error);
-                this.popup("Error", "error");
+                alert("Error");
             }.bind(this));
         }
     }
 
-    popup(txt, type) {
-        const getAlert = () => (
-            <SweetAlert
-                type={type}
-                title="Login"
-                onConfirm={() => this.hideAlert()}
-            >
-                {txt}
-            </SweetAlert>
-        );
-
-        this.setState({
-            alert: getAlert()
-        });
-    }
-
-    hideAlert() {
-        this.setState({
-            alert: null
-        });
-        if(sessionStorage.getItem("id")!=null){
-            this.props.history.push('/home')
-        }
-    }
+    
 
     updateInputEmail(e) {
         this.setState({
@@ -97,15 +74,16 @@ class Login extends Component {
                 console.log(response);
                 if (response.data.status == 0) {
                     sessionStorage.setItem("id", response.data.id);
-                    this.popup(response.data.message, "success");
-                } else {
-                    this.popup(response.data.message, "error");
+                    alert(response.data.message);
+                    this.props.history.push('/home')
+                }else{
+                    alert(response.data.message);
                 }
 
             }.bind(this))
             .catch(function (error) {
                 console.log(error);
-                this.popup("Error", "error");
+                alert("Error");
             }.bind(this));
     }
 
@@ -154,7 +132,6 @@ class Login extends Component {
                         </button>
                     </div>
                 </div>
-                {this.state.alert}
             </Background>
 
         );

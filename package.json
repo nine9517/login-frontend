@@ -14,7 +14,6 @@
     "axios": "^0.18.0",
     "bulma": "^0.7.2",
     "react": "^16.6.0",
-    "react-bootstrap-sweetalert": "^4.4.1",
     "react-dom": "^16.6.0",
     "react-facebook-login": "^4.1.1",
     "react-router-dom": "^4.3.1",
